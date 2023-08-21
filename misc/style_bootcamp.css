@@ -1,23 +1,37 @@
 /* Whole document: */
 body{
-    font-family: avenir;
-    font-size: 13pt;
-    color: rgb(0, 0, 0);
-    background-color: #f2f2f2;
-   /* background-image: url("background-hex.jpg"); */
+  font-family: 'Helvetica Neue', sans-serif;  
+  letter-spacing: -0.1px; 
+  line-height: 1.35; 
+  font-size: 12pt;
+  color: rgb(0, 0, 0);
+  opacity: 0.95;
+  background-color: #dbdbdbc3;  
+  background-image: url("COG_White.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 290px;
+  background-position: 5% 98%;
   }
   
   /* Headers */
   
-  h1.title {color: #ffffff;
-    font-size: 24pt;
-    background-color: #720000;
-    opacity: 1.0; /* completely opaque */
+  h1.title {
+    font-size: 26pt;
+    font-weight: 650;
+    color: #ffffff;
+    /* background-image: radial-gradient(#8A8D8F, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text; */
+    background-color: #9D2235;
+    border-radius: 5px 20px 20px;
+    opacity: 1.0;
     padding-top: 1em;
-    padding-bottom: .2em;
-    padding-left: .1em;
-    text-align: left;
-    /* border-left: 15px solid #074a17; adds a little green stripe on the left border */
+    padding-bottom: .5em;
+    text-align: center;
+    box-shadow: 4px 4px 5px #888;
+    /* border-left: 15px solid #8A8D8F;
+    border-right: 15px solid #8A8D8F; */
     
   }
   
@@ -27,34 +41,41 @@ body{
   
   
   h1 {
-    font-size: 22pt;
-    color: 	 white;
-    background-color: #000000;
-    padding-left: .5em;
+    font-size: 23pt;
+    font-weight: bold;
+    color: 	 #FFFFFF;
+    background-color: #9D2235;
+    opacity: .90;
     padding-top: .25em;
-    
+    padding-left: .5em;
+    box-shadow: 4px 4px 5px #888; 
+    border-radius: 10px; 
   }
   
   
   h2 { 
-    font-size: 18pt;
-    color:  #000000;  
-    background-color: lightgray;
-      padding-top:.5em;
-      opacity: 1.0; 
+    font-size: 20pt;
+    color:  #FFFFFF;  
+    background-color: #686868;
+    opacity: .80;
+    padding-left: .5em;
+    padding-top: .5em;
+    box-shadow: 3px 3px 4px #888;
+    border-radius: 5px; 
   }
   
   h3 { 
     font-size: 16pt;
-     color: #000000;
-      padding-top:.5em;
-      font-style: italic;
+    color: #000000;
+    padding-top:.5em;
+    padding-left: .5em;
+    font-style: italic;
   }
 
   h4 { 
     font-size: 14pt;
-     color: #000000;
-      padding-top:.5em;
+    color: #000000;
+    padding-top:.5em;
   }
   
   
@@ -70,10 +91,13 @@ body{
   }
   
   .r code {
-      white-space: pre;
+    white-space: pre;
   }
-  
-  
+
+  code {
+    color: #9D2235;
+    ;
+  }
   
   
   /* LINKS */
@@ -100,17 +124,18 @@ body{
   
   /* TOC */
   
-  div #TOC {float:right;
-  width:20%;
-  font-size: 11pt;
-  border: .5px solid #720000;
-  border-radius: 10px;
-  background: white;
-  padding: .5em;
-  overflow:hidden;
-  overflow-y:inherit
-  /*  box-shadow: 4px 4px 5px #888; */
-  }
+  div #TOC {
+    float:right;
+    width:20%;
+    font-size: 9.5pt;
+    border: 12.5px solid #9D2235;
+    border-radius: 15px;
+    background: white;
+    padding: .5em;
+    overflow:hidden;
+    overflow-y:inherit;
+    box-shadow: 4px 4px 5px #888;
+}
   
 .tocify-subheader > .tocify-item {
     text-indent: inherit;
