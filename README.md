@@ -7,9 +7,9 @@ This set of tutorials is intended for complete beginners to coding. If you have 
 ## Agenda
 | Date        | Workshop                             | Lead Instructor |
 | :-----------: |:------------------------------------:| :-----------:|
-| 08/22/23   | [Bash Command line](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/tree/main/bash) |  |
-| 08/23/23    | [Python](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/tree/main/python) | Katie Jobson |
-| 08/24/23    | [R](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/tree/main/R) | Billy Mitchell |
+| 08/22/23   | [Bash Command line](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/tree/main/bash) |  |
+| 08/23/23    | [Python](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/tree/main/python) | Katie Jobson |
+| 08/24/23    | [R](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/tree/main/R) | Billy Mitchell |
 
 
 
