@@ -21,4 +21,4 @@ This workshop will be an introduction to bash and the command line. The command 
 - Learn how to troubleshoot
 
 ## Workshop Materials
-- [Notebook Viewer](https://tu-coding-outreach-group.github.io/intro-to-coding-2023/bash/index.html)
+- [Notebook Viewer](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/tree/main/bash/index.html)
