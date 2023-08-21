@@ -21,5 +21,5 @@ This workshop will be an introduction to python. In this tutorial, you will crea
 - Learn how to clean data using Python packages
 
 ## Workshop Materials
-- [Notebook Viewer](https://tu-coding-outreach-group.github.io/intro-to-coding-2022/python/index.html)
+- [Notebook Viewer](https://tu-coding-outreach-group.github.io/intro-to-coding-2023/python/index.html)
 
