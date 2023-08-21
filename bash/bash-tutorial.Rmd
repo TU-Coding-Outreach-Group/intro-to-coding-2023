@@ -1,20 +1,26 @@
 ---
 title: "Bash Command Line Tutorial"
-author: "Haroon Popal"
+author:
+  - name: "**Content creator: Haroon Popal & Liz Beard**"
+  - name: "**Content editors: Katie Jobson & Billy Mitchell**"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
-  html_document:
+  html_document: 
     toc: true
     toc_depth: 2
-    toc_float: 
-      collapsed: false
-    df_print: paged
-    css: !expr here::here("./misc/style_bootcamp.css")
+    toc_float:
+      collapsed: true
+    self_contained: yes
+    mode: selfcontained
+    df_print: paged    
+    code_folding: show
+    number_sections: true
+    css: !expr here::here("misc/style_bootcamp.css")
 knit: (function(inputFile, encoding) { 
       out_dir <- './';
       rmarkdown::render(inputFile,
                         encoding=encoding, 
-                        output_file=file.path(dirname(inputFile), out_dir, 'index.html')) })
+                        output_file=file.path(dirname(inputFile), out_dir, 'index.html')) })                        
 ---
 
 # Introduction
@@ -76,6 +82,8 @@ The terminal is a way of interacting with your computer that does not require a 
 
 One reason, and a point we will stress throughout the bootcamp, is for automation. When you interact with a computer as you regularly do with a GUI and a mouse, you will have to repeat very redundant motions. Let's say you want to rename 100 files. You will have to right click on each one, hit "rename", and then type out the new name of the file, all while making small but infuriating mistakes at each of these steps. Repeating this process over and over, you might also make small mistakes that can be harder to catch later, like if you were to add an extra "a" in a name somewhere. With the terminal, and with coding in general, we can save ourselves a ton of time by creating a set of commands, testing them on a couple of files, and then running them on all of the other files using a script or our text file once we know that they work like we want them to. If later we want to do a similar thing for a new set of files, or even change the names of the files we already edited, we're even closer to completing that goal than we were in the first place because we can just modify that original script. 
 
+***PLEASE NOTE***: We have done this bootcamp annually for a few years now. Some of the screenshots (including that below) were taken when we'd conducted this bootcamp in the past. As such, the year in the title of the bootcamp directory shown may be slightly different than what we'd enter now. For example, if you open your terminal, your version of this directory will likely be named `intro-to-coding-2023` *rather than* `intro-to-coding-2021` as shown in the image below. 
+
 ![](images/terminal.PNG)
 
 
@@ -110,7 +118,7 @@ cd
 #### Exercise 1
 Use the commands we have learned to find the path (location) of the home directory. A path (or filepath) is the entire series of directories and subdirectories leading to a file or folder.
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/bash/solutions/ex1.sh)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/bash/solutions/ex1.sh)
 
 
 ## Navigating Directories
@@ -136,7 +144,7 @@ Navigate to the directory that your COG bootcamp materials are in using the term
 
 **Note:** Now is a good time to start using the text editor. The exercises you do today may be relevant to the rest of the bootcamp, so it is a good idea to keep a record of all the commands and actions you took to play around with the data. Add a comment to the script to note that the following code is for Exercise 2.a. Then write the solution for this exercise below the comment.
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/bash/solutions/ex2a.sh)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/bash/solutions/ex2a.sh)
 
 
 ### Getting from A to B
@@ -145,7 +153,7 @@ In the previous exercise, did you find yourself repetitively using the **`cd`** 
 #### Exercise 2.b
 Start at your home directory and navigate to the "bash" subdirectory within the COG bootcamp directory. Don't forget to add this code to your text file. 
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/bash/solutions/ex2b.sh)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/bash/solutions/ex2b.sh)
 
 
 ## Managing Directories
@@ -167,7 +175,7 @@ mkdir path/to/new/filename
 #### Exercise 2.c
 Create a subdirectory within the new "test_directory" and name it "test_subdirectory".
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/bash/solutions/ex2c.sh)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/bash/solutions/ex2c.sh)
 
 
 ### Moving things
@@ -179,7 +187,7 @@ mv path/to/file path/to/new/location
 #### Exercise 2.d
 Move the "test_subdirectory" directory back one level, so that it is in the "bash" directory.
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/bash/solutions/ex2d.sh)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/bash/solutions/ex2d.sh)
 
 
 ### Renaming things
@@ -191,7 +199,7 @@ mv old_filename new_filename
 #### Exercise 2.e
 Rename "test_subdirectory" as "subject_data"
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/bash/solutions/ex2e.sh)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/bash/solutions/ex2e.sh)
 
 
 ### Copying things
@@ -213,7 +221,7 @@ Flags are different and additional options for a command. The `-r` flag here sta
 
 **Hint:** There are multiple ways to solve this exercise. First, you should note the correct paths. It might seem complicated, but just keep in mind that only two inputs are needed for this command. Second, you can either copy all of the individual subject data using an `*` wildcard which tells bash "pull all these things". Or you can copy over the higher level directory and then rename it.
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/bash/solutions/ex2f.sh)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/bash/solutions/ex2f.sh)
 
 
 #### Think!
@@ -231,7 +239,7 @@ rm path/to/file
 #### Exercise 2.g
 Remove the old test_directory folder.
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/bash/solutions/ex2g.sh)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/bash/solutions/ex2g.sh)
 
 
 # If-statements
@@ -286,7 +294,7 @@ Use an if-statement in combination with a for loop to check whether subjects DE2
 
 ** Hint:** To complete this exercise, you will have to use the most important skill you will learn today. Google! Try to articulate the problem in a sentence and then google it. See if there are solutions already on line that you can just copy and modify. Outside of Google discuss and share helpful links with your group and your TA. What are some different ways to solve this exercise?
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/bash/solutions/ex3.sh)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/bash/solutions/ex3.sh)
 
 
 # Writing Scripts
@@ -313,7 +321,7 @@ bash bash_exercises.sh
 #### Exercise 4: Advanced!
 Modify the for loop if-statement to check whether the csv data exists for all subjects. We only checked for the first 10 subjects before. Make sure all of your paths are correct. If you do not want to run certain commands (like the mkdir commands in the beginning), comment them out (add a `#` at the beginning of the command).
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/bash/solutions/ex4.sh)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/bash/solutions/ex4.sh)
 
 
 # Preparing for the rest of the bootcamp
@@ -338,7 +346,7 @@ Modify the for loop if-statement to check whether the csv data exists for all su
 [Anaconda Installation](https://www.anaconda.com/products/individual#Downloads)
 
 ### R
-[See instructions on R day page](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022//tree/main/R)
+[See instructions on R day page](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023//tree/main/R)
 
 
 ## Symbolic links
