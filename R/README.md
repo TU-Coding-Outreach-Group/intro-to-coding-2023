@@ -1,16 +1,16 @@
 # Coding Outreach Group Bootcamp
 # R Tutorial
-08/17/2022  
+08/24/2023  
 
-__**Instructor:**__ William Mitchell
-
+__**Instructor:**__ Steven Martinez
+__**Content Creator:**__ Billy Mitchell
 
 ## Description
 This workshop will review basic coding skills relevant to conducting statistical analyses for an audience that has ***little to no experience in R***. It will build upon the groundwork laid in days 1 and 2 by using the same data that we had organized in Bash and cleaned in Python. Although R is well-suited for data wrangling purposes, we will focus specifically on how to conduct basic statistical tests in R, including Chi Square tests, T-Tests, ANOVAs, and various forms of Regression and how to make sense of this information through reports and visualizations. While a background in statistical theory is *helpful*, the module was designed such that it should not be *necessary* to follow along.
 
 ## Prerequisites
-1. [bash tutorial]()
-2. [python tutorial]()
+1. [bash tutorial](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/tree/main/bash)
+2. [python tutorial](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/tree/main/python)
 
 ## To-do before the tutorial
 1. Download R  
@@ -40,4 +40,4 @@ install.packages("tidyverse")
 - Learn how to visualize data
 
 ## Workshop Materials
-- [Notebook Viewer](https://tu-coding-outreach-group.github.io/intro-to-coding-2022/R/index.html)
+- [Notebook Viewer](https://tu-coding-outreach-group.github.io/intro-to-coding-2023/R/index.html)

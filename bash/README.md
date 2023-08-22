@@ -1,8 +1,9 @@
 # Coding Outreach Group Bootcamp
 # Bash Command Line Tutorial
+08/22/2023
 
 __**Content Creators:**__ Elizabeth Beard and Haroon Popal
-
+__**Instructor**__ Helen Schmidt
 
 ## Description
 This workshop will be an introduction to bash and the command line. The command line is how coders interact with their computers and the file structures within. As psychology researchers, we typically use the command line to manage our files, organize our data, install programs, and run other scripts.
