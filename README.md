@@ -28,7 +28,7 @@ For PC users, you can set up the bash command line and git by installing [this p
 
 | [Billy Mitchell](https://wj-mitchell.github.io/) | [Katie Jobson](https://kjobson-neuro.github.io/) | [Helen Schmidt](https://hschmidt12.github.io/) | [Steven Martinez](https://sites.temple.edu/adaptivememorylab/people/) |
 | :------------: | :----------: | :-----------: | :-------------: |
-| <img src="misc/images/billy-headshot.jpg"  width="200" height="150" /> | <img src="misc/images/katie-headshot.jpg"  width="200" height="150" /> | <img src="misc/images/helen-headshot.jpg"  width="200" height="150" /> | <img src="misc/images/steven-headshot.jpg"  width="200" height="150" /> |
+| <img src="misc/images/billy-headshot.jpg"  width="200" height="150" /> | <img src="misc/images/katie-headshot.jpg"  width="170" height="150" /> | <img src="misc/images/helen-headshot.jpg"  width="200" height="150" /> | <img src="misc/images/steven-headshot.jpg"  width="170" height="150" /> |
 
 
 ## Acknowledgements
