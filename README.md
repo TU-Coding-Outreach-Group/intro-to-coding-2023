@@ -24,6 +24,12 @@ Each tutorial will list the necessary prerequisites in their respective README.m
 
 For PC users, you can set up the bash command line and git by installing [this program](https://gitforwindows.org/). For Apple or Linux OS users, your terminal is this and you do not need to install further software.
 
+## Meet Your TAs
+
+| Billy Mitchell | Katie Jobson | Helen Schmidt | Steven Martinez |
+| :------------: | :----------: | :-----------: | :-------------: |
+| []!(misc/images/bill-headshot.jpg | []!(misc/images/katie-headshot.jpg | []!(misc/images/steven-headshot.jpg) |
+
 
 ## Acknowledgements
 We would like to thank the Psychology and Neuroscience Department at Temple University, and especially Dr. Peter Marshall for their support. 
