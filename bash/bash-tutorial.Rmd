@@ -253,7 +253,7 @@ fi
 The logical arguments used here can be a variety of things. One thing you can use it for in data management is to see whether certain files exist. The following command will check to see whether a .csv file exists for a particular subject.
 ```{eval=FALSE}
 # The -e flag tells bash "We want to know if this file exists"
-if (-e subject_data/subj_ID.csv); then
+if [ -e subject_data/subj_ID.csv]; then
 
   # The echo command makes bash print the statement that follows it, but because it's placed in an If-statement, it'll only print it if the logical argument above it is true.
   echo "The data exists!"
@@ -261,13 +261,27 @@ if (-e subject_data/subj_ID.csv); then
 fi
 ```
 
+Oh no! We didn't get any output from that. Maybe let's try looking for the *opposite*; checking if the file *doesn't* exist by adding a bang (`!`) before the flag
+
+```{eval=FALSE}
+# The -e flag tells bash "We want to know if this file exists"
+if [ ! -e subject_data/subj_ID.csv]; then
+
+  # The echo command makes bash print the statement that follows it, but because it's placed in an If-statement, it'll only print it if the logical argument above it is true.
+  echo "The data does not exist!"
+
+fi
+```
+
+Now we got something! 
+
 ## Elif
 We can also add additional conditions. These kinds of situations involve something along the lines of "if this do this, or if that do that, else do this."
 For example, maybe we forgot how we named our files. Let's try a couple of different file names, and if those don't work, we'll have it printed out that we're failures.
 ```{eval=FALSE}
-if (-e subject_data/DE249/DE249_dbdm_run_01.csv); then
+if [ -e subject_data/DE249/DE249_dbdm_run_01.csv ]; then
   echo "The first one was right!"
-elif (-e subject_data/DE249/DE249_dbdm_run_1.csv); then
+elif [ -e subject_data/DE249/DE249_dbdm_run_1.csv ]; then
   echo "The second one was right!"
 else
   echo "The file does not exist."
