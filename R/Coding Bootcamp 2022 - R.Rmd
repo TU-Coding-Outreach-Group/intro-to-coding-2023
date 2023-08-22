@@ -1,8 +1,9 @@
 ---
 title: "Analyzing Data in R"
-author: "Mitchell, W.J."
-date: "`r format(Sys.time(), '%B %d, %Y')`"
-original: "08/17/2022"
+author: 
+  - name: "Content Creator: Mitchell, W.J."
+  - name: "Instructor: Steven Martinez"
+date: "08/24/2023"
 output:
   html_document:
     number_sections: true
@@ -121,7 +122,7 @@ library(stargazer)
 library(tidyverse)
 ```
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/R/solutions/ex1.r)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/R/solutions/ex1.r)
 
 ## Specifying Your Working Directory in R
 
@@ -165,7 +166,7 @@ There are many ways to load data into R and they all depend upon what format the
   
 In the most basic sense, we can load data like this:
 
-```{r Loading dataframe, eval=TRUE,include=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r Loading dataframe, eval=TRUE,include=TRUE, message=FALSE, warning=FALSE, error=TRUE}
   setwd(Path)
   df <- read.csv(file = "r_data.csv")
 ```
@@ -182,7 +183,7 @@ If you click on *df* in the environment, it will open in a new tab of your *Sour
 
 There's a few things that ```read.csv()``` assumes correctly right off the bat. The default settings assume that the first row contains header names, which is correct in this case, so we don't need to specify that. Behind the scenes, ```read.csv()``` assumes that the different columns are divided by commas, which is also true in this case. If it weren't the data would look totally jumbled. However, it's not able to tell that the first column is just index information. Right now, it's treating it as if it's regular, informative data like all the other rows. We can fix that with a simple command:
 
-```{r Adding RowNames Argument, eval=TRUE,include=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r Adding RowNames Argument, eval=TRUE,include=TRUE, message=FALSE, warning=FALSE, error=TRUE}
   setwd(Path)
   df <- read.csv(file = "r_data.csv",
                  row.names = 1)
@@ -192,7 +193,7 @@ There's a few things that ```read.csv()``` assumes correctly right off the bat. 
 Notice that these arguments are separated by commas. If we don't put commas between arguments contained within the same command, R won't run the command. Also notice that we can put each of these arguments on their own lines. This isn't necessary, but it makes the code easier to read. R is NOT sensitive to indentation like Python is, so this is truly just a stylistic preference, but one I'd recommend adopting. 
 
 Running them on the same line yields the same output: 
-```{r Ran on the Same Line, eval=TRUE,include=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r Ran on the Same Line, eval=TRUE,include=TRUE, message=FALSE, warning=FALSE, error=TRUE}
   setwd(Path)
   df <- read.csv(file = "r_data.csv", row.names = 1)
   head(df)
@@ -200,7 +201,7 @@ Running them on the same line yields the same output:
 
 Digressions aside: Amazing! Now we have six columns of data, like we should. We might also notice that the first row of column *GM_Volume*, which is blank or missing data, was correctly identifed as ***NA*** or *Not Available*. This is very important because R treats ***NA*** values as categorically distinct from other types of value, and we want those to be correctly identified, so we don't need to worry about that either. However, there's just one more thing we can specify that will save us a headache later. You might notice that Age is classified as a "Character" type, however, we want it classified as a "Factor", which would suggest that it contains non-numeric values that can be organized in a logical order. The *stringsAsFactors argument can take care of that.
 
-```{r Adding stringsAsFactors, eval=TRUE,include=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r Adding stringsAsFactors, eval=TRUE,include=TRUE, message=FALSE, warning=FALSE, error=TRUE}
   setwd(Path)
   df <- read.csv(file = "r_data.csv", 
                  row.names = 1,
@@ -228,7 +229,7 @@ Option 1 is more convenient and probably a better choice for a command you are a
   
 ```
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/R/solutions/ex2.r)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/R/solutions/ex2.r)
 
 ## Subsetting Data 
 
@@ -336,7 +337,7 @@ Oh no! What happened? Figure out the mistake and recode the command correctly.
   
 ```
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/R/solutions/ex3.r)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/R/solutions/ex3.r)
 
 ## Slight Break Time 
 
@@ -397,7 +398,7 @@ Let's run a second Chi Square Test, this time examining whether there were diffe
   
 ```
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/R/solutions/ex4.r)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/R/solutions/ex4.r)
 
 ### Visualizing Chi Squares
 While a Chi Square Test is great, verbalizing the relationship can only go so far to communicate how these variables are related. Where R really excels, relative to some other languages, is visualizing relationships. ***ggplot2*** is one powerful tool to build visually-pleasing graphics one layer at a time. 
@@ -503,7 +504,7 @@ Let's try to generate a plot for the test we can in exercise 6. Remember, we wan
   
 ```
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/R/solutions/ex5.r)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/R/solutions/ex5.r)
 
 ## T-Tests
 
@@ -558,7 +559,7 @@ I'm curious whether there are differences in gray matter between our second olde
   
 ```  
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/R/solutions/ex6.r)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/R/solutions/ex6.r)
 
 ## ANOVAs
 
@@ -636,7 +637,7 @@ Notice the order of our commands above: what do you think would happen if you pu
 
 ```  
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/R/solutions/ex7.r)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/R/solutions/ex7.r)
 
 # Analyzing Data w/ Quantitative Independent Variables
 
@@ -720,8 +721,8 @@ Let's throw another big challenge at you all. We have not gone over creating vis
 ``` 
 
 
-```{r Exercise 08 - hidden, eval=T, include = F, warning=F}
-   (plot <- ggplot(df, aes(x = PQSI_score, y = GM_Volume)) +
+```{r Exercise 08 - hidden, eval=FALSE, include = F, warning=F, error=TRUE}
+   (plot <- ggplot2::ggplot(df, aes(x = PQSI_score, y = GM_Volume)) +
                  geom_smooth(method="lm", alpha = .25, size = 1.5) +
                  labs(title = "Sleep Quality Does Not Significantly Predict Gray Matter Volume",
                       x = "PQSI Score", 
@@ -729,14 +730,14 @@ Let's throw another big challenge at you all. We have not gone over creating vis
                  theme_classic())
 ``` 
 
-[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2022/blob/main/R/solutions/ex8.r)
+[Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/R/solutions/ex8.r)
 
 ## Multivariate Regression
 
 A multivariate linear regression builds upon bivariate regression by allowing for multiple predictors. If we measured temperature, ice cream sales, and the time since someone last ate, we might find that our previously specified model is now even more accurate because of the addition of the "time since last ate" variable. Within the context of our data, let's reexamine how the sleep quality of men and women affect gray matter volume. 
 
 **QUESTION**: 
-Does the interaction of sex and sleep qualiy predict gray matter volume?
+Does the interaction of sex and sleep quality predict gray matter volume?
 
 **HYPOTHESIS**:
 Another pea-brain hypothesis: men have more to gray matter volume to lose, so I predict sleep quality will disproportionately affect their gray matter volume more than women.
