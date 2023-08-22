@@ -28,7 +28,7 @@ For PC users, you can set up the bash command line and git by installing [this p
 
 | Billy Mitchell | Katie Jobson | Helen Schmidt | Steven Martinez |
 | :------------: | :----------: | :-----------: | :-------------: |
-| []!(misc/images/bill-headshot.jpg | []!(misc/images/katie-headshot.jpg | []!(misc/images/steven-headshot.jpg) |
+| ![](misc/images/bill-headshot.jpg) | ![](misc/images/katie-headshot.jpg) | ![](misc/images/helen-headshot.jpg) | ![](misc/images/steven-headshot.jpg) |
 
 
 ## Acknowledgements
