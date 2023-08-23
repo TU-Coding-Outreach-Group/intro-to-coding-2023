@@ -714,7 +714,9 @@ Another great way to get help with troubleshooting in particular are listervs. L
 
 ### Coding Outreach Group
 
-COG has many resources for coding, ranging from beginners to neuroimaging-specific coding resources. You can find all of that information [here](https://github.com/TU-Coding-Outreach-Group). ![](images/python_meme4.jfif) 
+COG has many resources for coding, ranging from beginners to neuroimaging-specific coding resources. You can find all of that information [here](https://github.com/TU-Coding-Outreach-Group). 
+
+![](images/python_meme4.jfif) 
 
 # Final Challenge
 
@@ -722,4 +724,6 @@ Take a new set of variables from the data we have been working with and combine 
 
 You don't have to make sure that all subjects have data, as we will be cleaning them in the R day tomorrow!
 
-*Hint*: We haven't taught you how to randomize numbers yet - see if you can use your troubleshooting skills to find an answer online! [Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/python/solutions/py_final.py) ![](images/python_meme3.jpg)
+*Hint*: We haven't taught you how to randomize numbers yet - see if you can use your troubleshooting skills to find an answer online! [Click for solution](https://github.com/TU-Coding-Outreach-Group/intro-to-coding-2023/blob/main/python/solutions/py_final.py) 
+
+![](images/python_meme3.jpg)
