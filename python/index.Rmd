@@ -714,7 +714,9 @@ Another great way to get help with troubleshooting in particular are listervs. L
 
 ### Coding Outreach Group
 
-COG has many resources for coding, ranging from beginners to neuroimaging-specific coding resources. You can find all of that information [here](https://github.com/TU-Coding-Outreach-Group). ![](images/python_meme4.jfif) \# Final Challenge
+COG has many resources for coding, ranging from beginners to neuroimaging-specific coding resources. You can find all of that information [here](https://github.com/TU-Coding-Outreach-Group). ![](images/python_meme4.jfif) 
+
+# Final Challenge
 
 Take a new set of variables from the data we have been working with and combine the skills you have learned here today. Use a for loop or a while loop to clean the data all in one bit of code! To accomplish this, use the tools we've collected in your "python_examples.py" to create a new "data_cleaning.py" script. Make a CSV file of 100 *random* subjects, with subject numbers, age, gender, whether they have their full MRI data, PSQI score. You should also filter your data so that we only have participants whose PSQI score is less than 5.
 
