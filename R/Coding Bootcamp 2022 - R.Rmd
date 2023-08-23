@@ -1,23 +1,29 @@
 ---
 title: "Analyzing Data in R"
 author: 
-  - name: "Content Creator: Mitchell, W.J."
-  - name: "Instructor: Steven Martinez"
-date: "08/24/2023"
-output:
-  html_document:
-    number_sections: true
+  - name: "**Content Creator: Billy Mitchell**"
+  - name: "**Instructor: Steven Martinez**"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: 
+  html_document: 
     toc: true
     toc_depth: 2
-    toc_float: 
-      collapsed: false
-    df_print: paged
+    toc_float:
+      collapsed: true
+    self_contained: yes
+    mode: selfcontained
+    df_print: paged    
+    code_folding: show
+    number_sections: true
     css: !expr here::here("misc/style_bootcamp.css")
 knit: (function(inputFile, encoding) { 
       out_dir <- './';
       rmarkdown::render(inputFile,
                         encoding=encoding, 
-                        output_file=file.path(dirname(inputFile), out_dir, 'index.html')) })
+                        output_file=file.path(dirname(inputFile), out_dir, 'index.html')) })                        
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 ```{r, echo=FALSE}
 knitr::opts_chunk$set(error = TRUE)
@@ -144,14 +150,14 @@ Pressing tab again will enter into a directory, thus showing me the contents of 
 
 ```{r Setting Working Directory, eval=FALSE,include=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # For Windows
-Path <- "C:/Users/Administrator/Documents/Github/intro-to-coding-2022/data/"
+Path <- "C:/Users/Administrator/Documents/Github/intro-to-coding-2023/data/"
 
 # For Mac
-Path <- "/Users/Administrator/Documents/Github/intro-to-coding-2022/data/"
+Path <- "/Users/Administrator/Documents/Github/intro-to-coding-2023/data/"
 ``` 
 
 ```{r Actually Setting Working Directory, eval=TRUE,include=FALSE, message=FALSE, warning=FALSE, error=FALSE}
-Path <- "C:/Users/Administrator/Documents/Github/intro-to-coding-2022/data/"
+Path <- "C:/Users/Administrator/Documents/Github/intro-to-coding-2023/data/"
 ``` 
 
 This format of assigning a value to an object is really important and we'll keep coming back to it throughout this tutorial. 
@@ -417,17 +423,22 @@ This chunk below should probably look big and confusing, and that's fine for now
                y ="Frequency") +
           theme_classic() 
 ```
+
 As I'd mentioned, ggplot's are built in layers. The first layer consists strictly of the plane in which the data will eventually be plotted. By entering where the data is being pulled from and the x and y values, we can lay the essential dimensions, but it's still not something very useful.
+
 ```{r Layer 1}
    ggplot(data = df, aes(x = Gender, fill = X3T_Full_MR_Compl)) 
 ```
 
 We can add new layers by adding a plus sign (+) to the end of the previous line. Think of this as similar to a comma; we don't necessarily have to move the next layer object to a new line, but it helps for readability. The next layer object is the *geom*. Geoms can be lines, bars, circles or whatever other shape you might imagine. They tell ggplot *how* the data should be plotted. In this case, we want a bar. By simply adding ```geom_bar()```, we see some massive changes to the plot. It's much more readable! 
+
 ```{r Layer 2}
    ggplot(data = df, aes(x = Gender, fill = X3T_Full_MR_Compl)) +
           geom_bar() 
 ```
+
 However, the axis labels aren't very descriptive. There's no title. Someone who just happened upon this visualization wouldn't be able to make much sense of it. We can fix this by labeling the different scales. We'll start with the X axis. Because our variables aren't continuous, but discrete, we'll use the ```scale_x_discrete``` command. We're going to concatenate the labels we want to see in their respective order (notice above female is to the left and male to the right).
+
 ```{r Layer 3}
    ggplot(data = df, aes(x = Gender, fill = X3T_Full_MR_Compl)) +
           geom_bar() +
@@ -435,12 +446,14 @@ However, the axis labels aren't very descriptive. There's no title. Someone who 
 ```
 
 Next, we can make our fill variable, X3T_Full_MR_Compl, make a little more sense with basically the same argument. Notice the general trend in the commands is "scale_VARIABLENAME_VARIABLETYPE". So if we had a quantitative variable within ```ggplot(data = df, aes()``` called ```color = ```, we would use ```scale_color_continuous()``` to modify it. 
+
 ```{r Layer 4}
    ggplot(data = df, aes(x = Gender, fill = X3T_Full_MR_Compl)) +
           geom_bar() +
           scale_x_discrete(labels = c("Female", "Male")) +
           scale_fill_discrete("Incomplete MRI Data", labels = c("Incomplete", "Complete"))
 ```
+
 Amazing! Now in layer 5, we are just adding more labels. "Frequency" describes the y axis better than count and we might want a label on the plot.  
 
 ```{r layer 5}
@@ -465,7 +478,9 @@ Lastly, it might be nice to get rid of that horrid gray background. This is wher
                y ="Frequency") +
           theme_classic()
 ```
+
 ... or this ...
+
 ```{r Layer 6 - Minimal}
    ggplot(data = df, aes(x = Gender, fill = X3T_Full_MR_Compl)) +
           geom_bar() +
@@ -476,7 +491,9 @@ Lastly, it might be nice to get rid of that horrid gray background. This is wher
                y ="Frequency") +
           theme_minimal()
 ```
+
 ... or we can get really crazy and manually specify the size, position, font, and face of just about everything in the plot.
+
 ```{r layer 6 - classic with all the bells and whistles}
    ggplot(data = df, aes(x = Gender, fill = X3T_Full_MR_Compl)) +
           geom_bar() +
@@ -498,6 +515,7 @@ These same elements are going to be used over and over again no matter what type
 
 ### Exercise 5
 Let's try to generate a plot for the test we can in exercise 6. Remember, we want to see Gender on the x axis and the frequency of the age groups on the Y axis. There are also at least two ways to go about this. 
+
 ```{r Exercise 05, code="'\n\n\n\n'", results=F}
 
   
@@ -591,6 +609,7 @@ The *Base R* command we use to specify that this is an ANOVA model is *aov()*. W
 ```
 
 ... the information isn't really formatted in a way that's immediately meaningful or understandable. We typically look towards metrics like p values or means to understand ANOVA results and those are not present here. In order to see those, we need to *summarize* the ANOVA object. 
+
 ```{r ANOVA results}
   summary(aov)
 ``` 
@@ -598,11 +617,13 @@ The *Base R* command we use to specify that this is an ANOVA model is *aov()*. W
 Now we can see the variable we were exploring to the left with it's related degrees of freedom, sum of squares, mean square value, F vlaue, and p value to its right, respectively. The summary function uses the significance code at the bottom, so we see we again only find a relationship that trends significance. 
 
 The report function works equally well on ANOVA objects as well. 
+
 ```{r Reporting the results}
   report(aov)
 ```
 
 We can get a little crazier with our models though. What if we wanted to explore the main effects of age and sex on gray matter volume? We could respecify our model like this: 
+
 ```{r ANOVA Model With Multiple Variables}
   summary(aov(GM_Volume ~ Age + Gender, data = df))
 ```
